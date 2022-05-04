@@ -1,85 +1,162 @@
-cabal-version:      2.4
-name:               economic-ecosystem-fresh-bank-with-cabal-nix
-version:            0.1.0.0
+cabal-version: 1.12
 
--- A short (one-line) description of the package.
--- synopsis:
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
 
--- A longer description of the package.
--- description:
+name:           bankService
+version:        0.0.1
+build-type:     Simple
 
--- A URL where users can report bugs.
--- bug-reports:
 
--- The license under which the package is released.
--- license:
-author:             risingBirdSong
-maintainer:         heregoingthere@outlook.com
--- A copyright notice.
--- copyright:
--- category:
-extra-source-files: CHANGELOG.md
+library
+-- myTodo bring these back
+--   exposed-modules:
+--       API.CustomerAccount
+--       Application
+--       Auth.JWT
+--       Currency
+--       Database.Persist.Extended
+--       Database.Persist.Types.Email
+--       Database.Persist.Types.Email.Internal
+--       Database.Persist.Types.Password
+--       Database.Persist.Types.Password.Internal
+--       DB.CustomerAccount
+--       DB.ImportEsqueleto
+--       Foundation
+--       Handler.CustomerAccount
+--       Handler.User
+--       Import
+--       Import.NoFoundation
+--       Model
+--       Model.LoginUser
+--       Model.RegisterLoginCustomerAccount
+--       Orphans
+--       Scratch
+--       Settings
+--       Types.CustomerAccount
+--       Util.UUID
+--       Validation.Email
+--       Web.Forma.Extended
+    exposed-modules:
+        Application
+  other-modules:
+      Paths_bankService
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , aeson-casing
+    , base
+    , blaze-builder
+    , bytestring
+    , case-insensitive
+    , classy-prelude
+    , classy-prelude-conduit
+    , classy-prelude-yesod
+    , conduit
+    , containers
+    , data-default
+    , directory
+    , email-validate
+    , esqueleto
+    , fast-logger
+    , file-embed
+    , foreign-store
+    , forma
+    , hjsmin
+    , hspec
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , jwt
+    , monad-control
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , safe
+    , safe-money
+    , safe-money-aeson
+    , shakespeare
+    , template-haskell
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , uuid
+    , vector
+    , wai
+    , wai-cors
+    , wai-extra
+    , wai-logger
+    , warp
+    , yaml
+    , yesod
+    , yesod-auth
+    , yesod-core
+    , yesod-form
+    , yesod-static
 
-executable economic-ecosystem-fresh-bank-with-cabal-nix
-    main-is:          Main.hs
-
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
-
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-    -- build-depends:    base ^>=4.15.1.0
-    build-depends: aeson 
-        , aeson-casing
-        , base
-        , blaze-builder
-        , bytestring
-        , case-insensitive
-        , classy-prelude
-        , classy-prelude-conduit
-        , classy-prelude-yesod
-        , conduit
-        , containers
-        , data-default
-        , directory
-        , email-validate
-        , esqueleto
-        , fast-logger
-        , file-embed
-        , foreign-store
-        , forma
-        , hjsmin
-        , http-client-tls
-        , http-conduit
-        , http-types
-        , jwt
-        , monad-control
-        , monad-logger
-        , mtl
-        , persistent
-        , persistent-postgresql
-        , persistent-template
-        , safe
-        , safe-money
-        , safe-money-aeson
-        , shakespeare
-        , template-haskell
-        , text
-        , time
-        , transformers
-        , unordered-containers
-        , uuid
-        , vector
-        , wai
-        , wai-cors
-        , wai-extra
-        , wai-logger
-        , warp
-        , yaml
-        , yesod
-        , yesod-auth
-        , yesod-core
-        , yesod-form
-        , yesod-static
-    hs-source-dirs:   app
-    default-language: Haskell2010
+executable bankService
+  main-is: main.hs
+  other-modules:
+      Paths_bankService
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , aeson-casing
+    , bankService
+    , base
+    , blaze-builder
+    , bytestring
+    , case-insensitive
+    , classy-prelude
+    , classy-prelude-conduit
+    , classy-prelude-yesod
+    , conduit
+    , containers
+    , data-default
+    , directory
+    , email-validate
+    , esqueleto
+    , fast-logger
+    , file-embed
+    , foreign-store
+    , forma
+    , hjsmin
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , jwt
+    , monad-control
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , safe
+    , safe-money
+    , safe-money-aeson
+    , shakespeare
+    , template-haskell
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , uuid
+    , vector
+    , wai
+    , wai-cors
+    , wai-extra
+    , wai-logger
+    , warp
+    , yaml
+    , yesod
+    , yesod-auth
+    , yesod-core
+    , yesod-form
+    , yesod-static

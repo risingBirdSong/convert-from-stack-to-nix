@@ -1,0 +1,23 @@
+-- By default this file is used by `parseRoutesFile` in Foundation.hs
+-- Syntax for this file here: https://www.yesodweb.com/book/routing-and-handlers
+
+-- Customer Account 
+/bank-api/customeraccount CustomerAccountR POST
+/bank-api/customeraccount-register CustomerAccountRegisterR POST
+/bank-api/customeraccount-login LoginCustomerAccount POST
+/bank-api/customeraccount-balanceinquiry BalanceInquiry POST 
+/bank-api/customeraccount-deposit Deposit POST
+/bank-api/customeraccount-support Support POST
+/bank-api/customeraccount-withdraw Withdraw POST
+
+
+
+/bank-api/onetime OneTimeCustomerAccountFundingRequest POST
+-- User
+/bank-api/user-register UsersRegisterR POST
+/bank-api/user UserR GET PUT
+/bank-api/login-user UsersLoginR POST
+/bank-api/loggedin LoggedIn GET
+
+
+

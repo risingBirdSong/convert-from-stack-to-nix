@@ -1,0 +1,70 @@
+-- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
+-- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
+
+-- note, this is just an example and should be deprecated at some point
+User
+    email Email
+    username Text
+    password Password
+    bio Text
+    image Text
+    createdAt UTCTime
+    updatedAt UTCTime
+    UniqueUserUsername username
+    UniqueUserEmail email
+    deriving Show Typeable
+
+CustomerAccount
+    bankAcount UUID.UUID sqltype=uuid -- default=uuid_generate_v4()
+    Primary bankAcount
+    UniqueCustomerAccountBankAcount bankAcount
+    -- UniqueUuid uuid
+    -- Migrating: ALTER TABLE "customer_account" ALTER COLUMN "uuid" SET DEFAULT uuid_generate_v4()
+    -- bankService: SqlError {sqlState = "42883", sqlExecStatus = FatalError, sqlErrorMsg = "function uuid_generate_v4() does not exist", sqlErrorDetail = "", sqlErrorHint = "No function matches the given name and argument types. You might need to add explicit type casts."}
+    -- verifiedStatus CustomerAccountVerifiedStatus myTodo handle verification later
+    primaryUsername Text
+    -- primaryEmail Email -- ugh should drop this at some point
+    primaryPassword Password
+    -- username Text
+    -- email Email
+    -- password Password
+    -- maybe include a phone number?
+    -- maybe include a physical address?
+    createdAt UTCTime
+    updatedAt UTCTime
+    primaryBalance USD
+    UniqueCustomerAccountUsername primaryUsername
+    deriving Show Typeable
+
+CustomerAccountAddress
+    key CustomerAccountId
+    street Text
+    city Text
+    region Text -- synonym for state
+    zipcode Int -- mytodo consider restricting this to 5 digits?        
+    country Text
+
+OneTimeCustomerAccountFunding
+    customerId CustomerAccountId
+    usedAt UTCTime Maybe
+    deriving Show
+
+CustomerAccountSupport
+    key CustomerAccountId
+    time UTCTime
+    text Text 
+
+
+
+-- for testing devel
+SomeData
+    something String
+    someNum Rational
+    balance TestUSD
+    deriving Show
+
+
+Tag
+    name Text
+    UniqueTagName name
+    deriving Show Typeable
