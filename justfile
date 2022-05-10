@@ -7,6 +7,7 @@ buildA:
     nix-build release0.nix 
 
 
+# version B commands, that is incorporating a specific JWT library
 depsB:
     cabal2nix . > project1.nix
 
