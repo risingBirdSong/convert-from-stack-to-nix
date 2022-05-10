@@ -1,12 +1,19 @@
+# the below commands are the first version, version A
 # update dependencies
-deps:
+depsA:
     cabal2nix . > project0.nix
 
-build:
+buildA:
     nix-build release0.nix 
 
-myecho:
-    echo "hello world, im testing here"
+
+depsB:
+    cabal2nix . > project1.nix
+
+buildB:
+    nix-build release1.nix 
+
+
 
 run:
     cabal run

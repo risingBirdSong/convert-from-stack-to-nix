@@ -11,35 +11,33 @@ build-type:     Simple
 
 library
 -- myTodo bring these back
---   exposed-modules:
---       API.CustomerAccount
---       Application
---       Auth.JWT
---       Currency
---       Database.Persist.Extended
---       Database.Persist.Types.Email
---       Database.Persist.Types.Email.Internal
---       Database.Persist.Types.Password
---       Database.Persist.Types.Password.Internal
---       DB.CustomerAccount
---       DB.ImportEsqueleto
---       Foundation
---       Handler.CustomerAccount
---       Handler.User
---       Import
---       Import.NoFoundation
---       Model
---       Model.LoginUser
---       Model.RegisterLoginCustomerAccount
---       Orphans
---       Scratch
---       Settings
---       Types.CustomerAccount
---       Util.UUID
---       Validation.Email
---       Web.Forma.Extended
-    exposed-modules:
-        Application
+  exposed-modules:
+      API.CustomerAccount
+      Application
+      Auth.JWT
+      Currency
+      Database.Persist.Extended
+      Database.Persist.Types.Email
+      Database.Persist.Types.Email.Internal
+      Database.Persist.Types.Password
+      Database.Persist.Types.Password.Internal
+      DB.CustomerAccount
+      DB.ImportEsqueleto
+      Foundation
+      Handler.CustomerAccount
+      Handler.User
+      Import
+      Import.NoFoundation
+      Model
+      Model.LoginUser
+      Model.RegisterLoginCustomerAccount
+      Orphans
+      Scratch
+      Settings
+      Types.CustomerAccount
+      Util.UUID
+      Validation.Email
+      Web.Forma.Extended
   other-modules:
       Paths_bankService
   hs-source-dirs:
@@ -132,6 +130,7 @@ executable bankService
     , http-conduit
     , http-types
     , jwt
+    , monad-control
     , monad-control
     , monad-logger
     , mtl
